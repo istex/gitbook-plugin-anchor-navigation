@@ -1,5 +1,5 @@
 {
-  "name": "gitbook-plugin-anchor-navigation-ex",
+  "name": "gitbook-plugin-anchor-navigation",
   "version": "1.0.10",
   "description": "Supports two navigation mode, title, anchor effect is the default theme, style, follow the website",
   "main": "index.js",
@@ -8,20 +8,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex.git"
+    "url": "git+https://github.com/thomas88100/gitbook-plugin-anchor-navigation.git"
   },
   "keywords": [
     "gitbook",
     "plugin",
-    "anchor-navigation-ex",
-    "ex"
+    "anchor-navigation"
   ],
-  "author": "zhuqiang,yuan1994",
-  "license": "GPL-3.0",
+  "author": "EHRHARD, Thomas",
   "bugs": {
-    "url": "https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/issues"
+    "url": "https://github.com/thomas88100/gitbook-plugin-anchor-navigation/issues"
   },
-  "homepage": "https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex#readme",
+  "homepage": "https://github.com/thomas88100/gitbook-plugin-anchor-navigation.git#readme",
   "dependencies": {
     "cheerio": "*",
     "github-slugid": "1.0.1",
@@ -35,27 +33,27 @@
       "showLevel": {
         "type": "boolean",
         "default": true,
-        "title": "是否为标题增加锚点效果并显示序号"
+        "title": ""
       },
       "associatedWithSummary": {
         "type": "boolean",
         "default": true,
-        "title": "是否与官方默认主题summary目录生成的序号相关联"
+        "title": ""
       },
       "mode": {
         "type": "string",
         "default": "float",
-        "title": "导航模式"
+        "title": ""
       },
       "printLog": {
         "type": "boolean",
         "default": false,
-        "title": "是否打印处理进度日志，方便排错"
+        "title": ""
       },
       "multipleH1": {
         "type": "boolean",
         "default": true,
-        "title": "false:去掉每页开头H1标题被重写成1. xxx（如果您的md文档遵循一个md文件只有一个H1标题的话)"
+        "title": ""
       },
       "float": {
         "type": "object",
@@ -65,7 +63,7 @@
           "level2Icon": "",
           "level3Icon": ""
         },
-        "title": "浮动右侧导航模式"
+        "title": ""
       },
       "pageTop": {
         "type": "object",
@@ -75,7 +73,7 @@
           "level2Icon": "",
           "level3Icon": ""
         },
-        "title": "页内顶部导航模式"
+        "title": ""
       }
     }
   }
