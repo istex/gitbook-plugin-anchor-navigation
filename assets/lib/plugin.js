@@ -85,7 +85,7 @@ function titleAddAnchor(header, id) {
 function handlerH1Toc(config, count, header, tocs, pageLevel) {
     var title = header.text();
     var id = header.attr('id');
-    var level = '';
+    var level = ''; 
     titleAddAnchor(header, id);
     tocs.push({
         name: title,
@@ -102,7 +102,15 @@ function handlerH1Toc(config, count, header, tocs, pageLevel) {
 function handlerH2Toc(config, count, header, tocs, pageLevel) {
     var title = header.text();
     var id = header.attr('id');
-    var level = ''; 
+    var level = ''; //层级
+
+    if (tocs.length <= 0) {
+        titleAddAnchor(header, id);
+        return;
+    }
+
+    var h1Index = tocs.length - 1;
+    var h1Toc = tocs[h1Index];
     titleAddAnchor(header, id);
     h1Toc.children.push({
         name: title,
@@ -119,7 +127,20 @@ function handlerH2Toc(config, count, header, tocs, pageLevel) {
 function handlerH3Toc(config, count, header, tocs, pageLevel) {
     var title = header.text();
     var id = header.attr('id');
-    var level = ''; 
+    var level = ''; //层级
+
+    if (tocs.length <= 0) {
+        titleAddAnchor(header, id);
+        return;
+    }
+    var h1Index = tocs.length - 1;
+    var h1Toc = tocs[h1Index];
+    var h2Tocs = h1Toc.children;
+    if (h2Tocs.length <= 0) {
+        titleAddAnchor(header, id);
+        return;
+    }
+    var h2Toc = h1Toc.children[h2Tocs.length - 1];
     titleAddAnchor(header, id);
     h2Toc.children.push({
         name: title,
