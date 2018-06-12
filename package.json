@@ -1,5 +1,5 @@
 {
-  "name": "gitbook-plugin-anchor-navigation",
+  "name": "gitbook-plugin-ancre-navigation",
   "version": "1.0.0",
   "description": "Supports two navigation mode, title, anchor effect is the default theme, style, follow the website",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thomas88100/gitbook-plugin-anchor-navigation.git"
+    "url": "git+https://github.com/thomas88100/gitbook-plugin-ancre-navigation.git"
   },
   "keywords": [
     "gitbook",
@@ -19,9 +19,9 @@
   "author": "EHRHARD Thomas",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/thomas88100/gitbook-plugin-anchor-navigation/issues"
+    "url": "https://github.com/thomas88100/gitbook-plugin-ancre-navigation/issues"
   },
-  "homepage": "https://github.com/thomas88100/gitbook-plugin-anchor-navigation#readme",
+  "homepage": "https://github.com/thomas88100/gitbook-plugin-ancre-navigation#readme",
   "dependencies": {
     "cheerio": "*",
     "github-slugid": "1.0.1",

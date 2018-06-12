@@ -35,7 +35,7 @@ function handler(defaultConfig, config) {
 }
 
 function handlerAll(bookIns) {
-    var config = bookIns.config.get('pluginsConfig')['anchor-navigation'];
+    var config = bookIns.config.get('pluginsConfig')['ancre-navigation'];
     var themeDefaultConfig = bookIns.config.get('pluginsConfig')['theme-default'];
     handler(defaultConfig, config);
     handler(defaultConfig.themeDefault, themeDefaultConfig);

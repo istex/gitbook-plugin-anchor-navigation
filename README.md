@@ -1,4 +1,4 @@
-# gitbook-plugin-anchor-navigation
+# gitbook-plugin-ancre-navigation
 
 
 
@@ -9,7 +9,7 @@ In your `book. Json` add plugins:
 ```
 {
   "plugins": [
-       "anchor-navigation-ex"
+       "ancre-navigation"
   ]
 }
 ```
