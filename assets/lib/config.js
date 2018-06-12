@@ -46,7 +46,7 @@ function handler(defaultConfig, config) {
  * @param bookIns
  */
 function handlerAll(bookIns) {
-    var config = bookIns.config.get('pluginsConfig')['anchor-navigation-ex'];
+    var config = bookIns.config.get('pluginsConfig')['anchor-navigation'];
     var themeDefaultConfig = bookIns.config.get('pluginsConfig')['theme-default'];
     handler(defaultConfig, config);
     handler(defaultConfig.themeDefault, themeDefaultConfig);
