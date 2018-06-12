@@ -15,11 +15,12 @@
     "plugin",
     "anchor-navigation"
   ],
-  "author": "EHRHARD, Thomas",
+  "author": "zhuqiang,yuan1994",
+  "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/thomas88100/gitbook-plugin-anchor-navigation/issues"
   },
-  "homepage": "https://github.com/thomas88100/gitbook-plugin-anchor-navigation.git#readme",
+  "homepage": "https://github.com/thomas88100/gitbook-plugin-anchor-navigation#readme",
   "dependencies": {
     "cheerio": "*",
     "github-slugid": "1.0.1",
@@ -33,27 +34,27 @@
       "showLevel": {
         "type": "boolean",
         "default": true,
-        "title": ""
+        "title": "是否为标题增加锚点效果并显示序号"
       },
       "associatedWithSummary": {
         "type": "boolean",
         "default": true,
-        "title": ""
+        "title": "是否与官方默认主题summary目录生成的序号相关联"
       },
       "mode": {
         "type": "string",
         "default": "float",
-        "title": ""
+        "title": "导航模式"
       },
       "printLog": {
         "type": "boolean",
         "default": false,
-        "title": ""
+        "title": "是否打印处理进度日志，方便排错"
       },
       "multipleH1": {
         "type": "boolean",
         "default": true,
-        "title": ""
+        "title": "false:去掉每页开头H1标题被重写成1. xxx（如果您的md文档遵循一个md文件只有一个H1标题的话)"
       },
       "float": {
         "type": "object",
@@ -63,7 +64,7 @@
           "level2Icon": "",
           "level3Icon": ""
         },
-        "title": ""
+        "title": "浮动右侧导航模式"
       },
       "pageTop": {
         "type": "object",
@@ -73,7 +74,7 @@
           "level2Icon": "",
           "level3Icon": ""
         },
-        "title": ""
+        "title": "页内顶部导航模式"
       }
     }
   }
