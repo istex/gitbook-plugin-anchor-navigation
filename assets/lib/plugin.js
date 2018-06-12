@@ -3,13 +3,6 @@ var slug = require('github-slugid');
 var Config = require('./config.js');
 
 
-/**
- * 处理toc相关，同时处理标题和id
- * @param $
- * @param option
- * @param page
- * @returns {Array} 返回处理好的tocs合集
- */
 function handlerTocs($, page) {
     var config = Config.config;
     var tocs = [];
@@ -18,7 +11,7 @@ function handlerTocs($, page) {
         h2: 0,
         h3: 0
     };
-    var titleCountMap = {}; // 用来记录标题出现的次数
+    var titleCountMap = {};
     var h1 = 0, h2 = 0, h3 = 0;
     $(':header').each(function (i, elem) {
         var header = $(elem);
@@ -41,34 +34,21 @@ function handlerTocs($, page) {
             }
         }
     });
-    // 不然标题重写就没有效果，如果在外面不调用这句话的话
     page.content = $.html();
     return tocs;
 }
 
-/**
- * 处理锚点
- * @param header
- * @param titleCountMap 用来记录标题出现的次数
- * @returns {string}
- */
 function addId(header, titleCountMap) {
     var id = header.attr('id') || slug(header.text());
     var titleCount = titleCountMap[id] || 0;
     titleCountMap[id] = titleCount + 1;
-    // console.log('id:', id, 'n:', titleCount, 'hashmap:', titleCountMap)
-    if (titleCount) {//此标题已经存在  null/undefined/0/NaN/ 表达式时，统统被解释为false
+    if (titleCount) {
         id = id + '_' + titleCount;
     }
     header.attr("id", id);
     return id;
 }
 
-/**
- * 标题增加锚点效果
- * @param header
- * @param id
- */
 function titleAddAnchor(header, id) {
     header.prepend('<a name="' + id + '" class="anchor-navigation-ex-anchor" '
         + 'href="#' + id + '">'
@@ -76,12 +56,6 @@ function titleAddAnchor(header, id) {
         + '</a>');
 }
 
-/**
- * 处理h1
- * @param count 计数器
- * @param header
- * @param tocs 根节点
- */
 function handlerH1Toc(config, count, header, tocs, pageLevel) {
     var title = header.text();
     var id = header.attr('id');
@@ -94,15 +68,11 @@ function handlerH1Toc(config, count, header, tocs, pageLevel) {
         children: []
     });
 }
-/**
- * 处理h2
- * @param count 计数器
- * @param header
- */
+
 function handlerH2Toc(config, count, header, tocs, pageLevel) {
     var title = header.text();
     var id = header.attr('id');
-    var level = ''; //层级
+    var level = ''; 
 
     if (tocs.length <= 0) {
         titleAddAnchor(header, id);
@@ -119,15 +89,11 @@ function handlerH2Toc(config, count, header, tocs, pageLevel) {
         children: []
     });
 }
-/**
- * 处理h3
- * @param count 计数器
- * @param header
- */
+
 function handlerH3Toc(config, count, header, tocs, pageLevel) {
     var title = header.text();
     var id = header.attr('id');
-    var level = ''; //层级
+    var level = ''; 
 
     if (tocs.length <= 0) {
         titleAddAnchor(header, id);
@@ -150,12 +116,6 @@ function handlerH3Toc(config, count, header, tocs, pageLevel) {
     });
 }
 
-/**
- * 处理浮动导航：拼接锚点导航html，并添加到html末尾，利用css 悬浮
- * @param option
- * @param tocs
- * @param page
- */
 function handlerFloatNavbar($, tocs, page) {
     var config = Config.config;
     var float = config.float;
@@ -242,10 +202,9 @@ function buildTopNavbar($, tocs, page) {
 
 function start(bookIns, page) {
     var $ = cheerio.load(page.content);
-    // 处理toc相关，同时处理标题和id
+
     var tocs = handlerTocs($, page);
 
-    // 设置处理之后的内容
     if (tocs.length == 0) {
         page.content = $.html();
         return;
